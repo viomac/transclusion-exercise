@@ -6,13 +6,13 @@ import { Component, Input, OnInit } from '@angular/core';
   <!-- [attribute] multi slot transclusion here -->
   <div class="card text-center">
     <div class="card-header">
-      <ng-content select="[card-type=header]"></ng-content>
+      <ng-content select=".card-header"></ng-content>
     </div>
     <div class="card-body">
-      <ng-content select="[card-type=body]"></ng-content>
+      <ng-content select=".card-body"></ng-content>
     </div>
     <div class="card-footer text-muted">
-      <ng-content select="[card-type=footer]"></ng-content>
+      <ng-content select=".card-footer"></ng-content>
     </div>
   </div>
   `,
