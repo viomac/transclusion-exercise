@@ -1,30 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'card',
   template: `
   <div class="card text-center">
     <div class="card-header">
-      Featured
+      {{ header }}
     </div>
     <div class="card-body">
-      <h5 class="card-title">Special title treatment</h5>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <!-- single slot transclusion here -->
+      <ng-content></ng-content>
     </div>
     <div class="card-footer text-muted">
-      2 days ago
+      {{ footer }}
     </div>
   </div>
   `,
   styles: [
   ]
 })
-export class CardComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class CardComponent {
+  @Input() header: string = 'This is the header';
+  @Input() footer: string = 'This is the footer';
 }
