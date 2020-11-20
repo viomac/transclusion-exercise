@@ -8,8 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
       {{ header }}
     </div>
     <div class="card-body">
-      <!-- single slot transclusion here -->
-      <ng-content></ng-content>
+      <!-- [attribute] multi slot transclusion here -->
+      <ng-content select="[card-body]"></ng-content>
     </div>
     <div class="card-footer text-muted">
       {{ footer }}
